@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0-beta.2/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.2.1/jquery.min.js"
+            th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+</head>
+<body>
+<div class="container">
+
+    <h2>Customer</h2>
+    <div>
+        <form class="form-horizontal" th:object="${customer}" th:action="@{/customer}" method="post">
+            <input type="hidden" th:field="*{id}"/>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-2">Id:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" th:field="*{id}"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-2">Full name:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" th:field="*{fullName}"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-2">E-Mail:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" th:field="*{email}"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>
